@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.11.0 on win32)" generated="20221224 12:47:35.538" rpa="false" schemaversion="3">
+<suite id="s1" name="Rq2.Bf3.1.Ct1 Passer Une Commande-Nominal" source="d:\Robot Framwork VsCode Projects\Projet Final RobotFramework\scripts\rq2.bf3.1.ct1 passer une commande-nominal.robot">
+<kw name="Ouvrir le navigateur" library="Keywords" type="SETUP">
+<arg>${vURL}</arg>
+<arg>${vBrowser}</arg>
+<doc>Ce keyword permet d'ouvrir le navigateur et d'acceder a l'appli web a tester</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${vURL}</arg>
+<arg>${vBrowser}</arg>
+<arg>options=add_argument('--lang=fr')</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221224 12:47:35.889" level="INFO">Opening browser 'chrome' to base url 'http://tutorialsninja.com/demo/index.php?route=common/home'.</msg>
+<status status="PASS" starttime="20221224 12:47:35.888" endtime="20221224 12:47:42.600"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221224 12:47:42.601" endtime="20221224 12:47:42.725"/>
+</kw>
+<status status="PASS" starttime="20221224 12:47:35.886" endtime="20221224 12:47:42.727"/>
+</kw>
+<test id="s1-t1" name="Préconditions" line="38">
+<kw name="S'inscrire" library="Keywords">
+<arg>${vFirst_Name}</arg>
+<arg>${vLastName}</arg>
+<arg>${vEmail}</arg>
+<arg>${vPhone}</arg>
+<arg>${vPassword}</arg>
+<arg>${vNewsletter}</arg>
+<doc>Ce keyword permet de creer un nouveau utilisateur</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${elmnt_My_Account}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:42.732" level="INFO">Clicking element '//span[normalize-space()='My Account']'.</msg>
+<status status="PASS" starttime="20221224 12:47:42.729" endtime="20221224 12:47:42.917"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${link_Register}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:42.918" level="INFO">Clicking element '//ul[@class='dropdown-menu dropdown-menu-right']//a[normalize-space()='Register']'.</msg>
+<status status="PASS" starttime="20221224 12:47:42.918" endtime="20221224 12:47:44.797"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txtFirstName}</arg>
+<arg>${vFirst_Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:44.799" level="INFO">Typing text 'Mihock' into text field 'id=input-firstname'.</msg>
+<status status="PASS" starttime="20221224 12:47:44.797" endtime="20221224 12:47:44.927"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_Last_Name}</arg>
+<arg>${vLastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:44.928" level="INFO">Typing text 'Dracola' into text field 'id=input-lastname'.</msg>
+<status status="PASS" starttime="20221224 12:47:44.928" endtime="20221224 12:47:45.079"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_Email}</arg>
+<arg>${vEmail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:45.083" level="INFO">Typing text 'mihackdraccolaa@onepiece.qm' into text field 'id=input-email'.</msg>
+<status status="PASS" starttime="20221224 12:47:45.080" endtime="20221224 12:47:45.223"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_Telephone}</arg>
+<arg>${vPhone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:45.225" level="INFO">Typing text '00000000000' into text field 'id=input-telephone'.</msg>
+<status status="PASS" starttime="20221224 12:47:45.223" endtime="20221224 12:47:45.332"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_Password}</arg>
+<arg>${vPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:45.334" level="INFO">Typing text 'Ba3oooooBa3ooooo' into text field 'id=input-password'.</msg>
+<status status="PASS" starttime="20221224 12:47:45.333" endtime="20221224 12:47:45.444"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_Password_Confirm}</arg>
+<arg>${vPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:45.445" level="INFO">Typing text 'Ba3oooooBa3ooooo' into text field 'id=input-confirm'.</msg>
+<status status="PASS" starttime="20221224 12:47:45.445" endtime="20221224 12:47:45.559"/>
+</kw>
+<if>
+<branch type="IF" condition="'${vNewsletter}' == 'Yes'">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${radio_Yes}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221224 12:47:45.559" endtime="20221224 12:47:45.560"/>
+</kw>
+<status status="NOT RUN" starttime="20221224 12:47:45.559" endtime="20221224 12:47:45.560"/>
+</branch>
+<status status="PASS" starttime="20221224 12:47:45.559" endtime="20221224 12:47:45.560"/>
+</if>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${checkbox_Privacy_Policy}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:45.561" level="INFO">Clicking element '//input[@name='agree']'.</msg>
+<status status="PASS" starttime="20221224 12:47:45.560" endtime="20221224 12:47:45.618"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_Continue1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:45.619" level="INFO">Clicking element '//input[@value='Continue']'.</msg>
+<status status="PASS" starttime="20221224 12:47:45.618" endtime="20221224 12:47:46.444"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${btn_Continue2}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:46.445" level="INFO">Clicking link '//a[normalize-space()='Continue']'.</msg>
+<status status="PASS" starttime="20221224 12:47:46.444" endtime="20221224 12:47:46.913"/>
+</kw>
+<status status="PASS" starttime="20221224 12:47:42.728" endtime="20221224 12:47:46.914"/>
+</kw>
+<status status="PASS" starttime="20221224 12:47:42.728" endtime="20221224 12:47:46.914"/>
+</test>
+<test id="s1-t2" name="Cas de test" line="41">
+<kw name="Passer une commande" library="Keywords">
+<arg>${vProduitRecherche}</arg>
+<arg>${vProduitsellectionne}</arg>
+<arg>${vFirst_Name}</arg>
+<arg>${vLast_Name}</arg>
+<arg>${vAdresse}</arg>
+<arg>${v_City}</arg>
+<arg>${vCode_Postale}</arg>
+<arg>${vMessage}</arg>
+<doc>Ce keyword permet de passer une commande</doc>
+<kw name="Recherche de produits" library="Keywords">
+<arg>${vProduitRecherche}</arg>
+<doc>Ce keyword permet de chercher des produits sur le site</doc>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${txt_Recherche}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20221224 12:47:46.923" endtime="20221224 12:47:46.979"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_Recherche}</arg>
+<arg>${vProduitRecherche}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:46.980" level="INFO">Typing text 'Mac' into text field '//body/header//input'.</msg>
+<status status="PASS" starttime="20221224 12:47:46.979" endtime="20221224 12:47:47.056"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_Recherche}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:47.057" level="INFO">Clicking button '//body/header//input/following-sibling::span/button'.</msg>
+<status status="PASS" starttime="20221224 12:47:47.056" endtime="20221224 12:47:47.754"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${link_Prodact_Compar}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221224 12:47:47.755" endtime="20221224 12:47:47.791"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${link_Prodact_Compar}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221224 12:47:47.812" level="INFO">Element 'id=compare-total' is displayed.</msg>
+<status status="PASS" starttime="20221224 12:47:47.792" endtime="20221224 12:47:47.812"/>
+</kw>
+<status status="PASS" starttime="20221224 12:47:46.922" endtime="20221224 12:47:47.812"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${produit_Selectionné1}${vProduitsellectionne}${produit_Selectionné2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:47.813" level="INFO">Clicking element '//div[@class='image']//img[@title='MacBook']'.</msg>
+<status status="PASS" starttime="20221224 12:47:47.813" endtime="20221224 12:47:49.827"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_Add_To_Cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:49.828" level="INFO">Clicking element '//button[normalize-space()='Add to Cart']'.</msg>
+<status status="PASS" starttime="20221224 12:47:49.827" endtime="20221224 12:47:49.939"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${link_Panier}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:49.940" level="INFO">Clicking element '//button[@class='btn btn-inverse btn-block btn-lg dropdown-toggle']'.</msg>
+<status status="PASS" starttime="20221224 12:47:49.939" endtime="20221224 12:47:50.007"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${link_Checkout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221224 12:47:50.007" endtime="20221224 12:47:50.702"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${link_Checkout}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:50.703" level="INFO">Clicking element '//strong[normalize-space()='Checkout']'.</msg>
+<status status="PASS" starttime="20221224 12:47:50.702" endtime="20221224 12:47:51.111"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${txt_champs_First_Name}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221224 12:47:51.112" endtime="20221224 12:47:51.564"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_champs_First_Name}</arg>
+<arg>${vFirst_Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:51.565" level="INFO">Typing text 'Mihock' into text field '//input[@id='input-payment-firstname']'.</msg>
+<status status="PASS" starttime="20221224 12:47:51.564" endtime="20221224 12:47:51.682"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_champs_Last_Name}</arg>
+<arg>${vLast_Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:51.685" level="INFO">Typing text 'Dracola' into text field '//input[@id='input-payment-lastname']'.</msg>
+<status status="PASS" starttime="20221224 12:47:51.683" endtime="20221224 12:47:51.794"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_champs_Address_1}</arg>
+<arg>${vAdresse}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:51.795" level="INFO">Typing text '44 rue chouhada' into text field '//input[@placeholder='Address 1']'.</msg>
+<status status="PASS" starttime="20221224 12:47:51.795" endtime="20221224 12:47:51.904"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_champs_City}</arg>
+<arg>${v_City}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:51.906" level="INFO">Typing text 'Adrar' into text field '//input[@id='input-payment-city']'.</msg>
+<status status="PASS" starttime="20221224 12:47:51.905" endtime="20221224 12:47:52.001"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_champs_Post_Code}</arg>
+<arg>${vCode_Postale}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:52.002" level="INFO">Typing text 'A1A2B2' into text field '//input[@id='input-payment-postcode']'.</msg>
+<status status="PASS" starttime="20221224 12:47:52.002" endtime="20221224 12:47:52.109"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${link_Country}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:52.110" level="INFO">Clicking element '//select[@id='input-payment-country']'.</msg>
+<status status="PASS" starttime="20221224 12:47:52.110" endtime="20221224 12:47:52.221"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${link_choice_country}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:52.224" level="INFO">Clicking element '//select[@id='input-payment-country']/option[normalize-space()='Algeria']'.</msg>
+<status status="PASS" starttime="20221224 12:47:52.222" endtime="20221224 12:47:52.332"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${link_Region_State}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:52.334" level="INFO">Clicking element '//select[@id='input-payment-zone']'.</msg>
+<status status="PASS" starttime="20221224 12:47:52.332" endtime="20221224 12:47:52.431"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${link_Choice_Region_State}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221224 12:47:52.432" endtime="20221224 12:47:52.678"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${link_Choice_Region_State}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:52.679" level="INFO">Clicking element '//select[@id='input-payment-zone']/option[normalize-space()='Adrar']'.</msg>
+<status status="PASS" starttime="20221224 12:47:52.678" endtime="20221224 12:47:52.714"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_Continue_payment_Adresse}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:52.716" level="INFO">Clicking element '//input[@id='button-payment-address']'.</msg>
+<status status="PASS" starttime="20221224 12:47:52.715" endtime="20221224 12:47:52.811"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${link_Choice_Region_State}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:52.812" level="INFO">Clicking element '//select[@id='input-payment-zone']/option[normalize-space()='Adrar']'.</msg>
+<status status="PASS" starttime="20221224 12:47:52.811" endtime="20221224 12:47:52.840"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_Continue_Billing_Detail}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:52.841" level="INFO">Clicking element '//input[@id='button-payment-address']'.</msg>
+<status status="PASS" starttime="20221224 12:47:52.840" endtime="20221224 12:47:52.875"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${link_contact_us}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221224 12:47:52.876" endtime="20221224 12:47:53.539"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${link_contact_us}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:53.540" level="INFO">Clicking element '//a[normalize-space()='contact us']'.</msg>
+<status status="PASS" starttime="20221224 12:47:53.539" endtime="20221224 12:47:54.199"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_Equiry}</arg>
+<arg>${vMessage}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:54.200" level="INFO">Typing text 'Please how can I pay' into text field '//textarea[@id='input-enquiry']'.</msg>
+<status status="PASS" starttime="20221224 12:47:54.199" endtime="20221224 12:47:54.335"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_Submit}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:54.337" level="INFO">Clicking element '//input[@value='Submit']'.</msg>
+<status status="PASS" starttime="20221224 12:47:54.336" endtime="20221224 12:47:55.278"/>
+</kw>
+<status status="PASS" starttime="20221224 12:47:46.921" endtime="20221224 12:47:55.278"/>
+</kw>
+<status status="PASS" starttime="20221224 12:47:46.920" endtime="20221224 12:47:55.280"/>
+</test>
+<test id="s1-t3" name="Postconditions" line="47">
+<kw name="Logout" library="Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${elmnt_My_Account}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221224 12:47:55.283" endtime="20221224 12:47:55.314"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${elmnt_My_Account}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:55.315" level="INFO">Clicking element '//span[normalize-space()='My Account']'.</msg>
+<status status="PASS" starttime="20221224 12:47:55.315" endtime="20221224 12:47:55.368"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${link_Logout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221224 12:47:55.369" endtime="20221224 12:47:55.419"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${link_Logout}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:55.420" level="INFO">Clicking element '(//a[normalize-space()='Logout'])[1]'.</msg>
+<status status="PASS" starttime="20221224 12:47:55.420" endtime="20221224 12:47:56.083"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_Continue_Logout}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221224 12:47:56.087" level="INFO">Clicking element '//a[normalize-space()='Continue']'.</msg>
+<status status="PASS" starttime="20221224 12:47:56.083" endtime="20221224 12:47:56.563"/>
+</kw>
+<status status="PASS" starttime="20221224 12:47:55.283" endtime="20221224 12:47:56.564"/>
+</kw>
+<status status="PASS" starttime="20221224 12:47:55.282" endtime="20221224 12:47:56.565"/>
+</test>
+<kw name="Fermer les fenettres" library="Keywords" type="TEARDOWN">
+<doc>Ce keyword permet de fermer tout les navigateurs ouverts</doc>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221224 12:47:56.567" endtime="20221224 12:48:02.984"/>
+</kw>
+<status status="PASS" starttime="20221224 12:47:56.567" endtime="20221224 12:48:02.985"/>
+</kw>
+<doc>Fichiers de scripts pour le module RQ1.BF1.1 Ajouter un utilisateur-NominalEssais</doc>
+<status status="PASS" starttime="20221224 12:47:35.545" endtime="20221224 12:48:02.985"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Rq2.Bf3.1.Ct1 Passer Une Commande-Nominal">Rq2.Bf3.1.Ct1 Passer Une Commande-Nominal</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

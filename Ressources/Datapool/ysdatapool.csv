@@ -1,0 +1,11 @@
+*** Test Cases ***;${vFirst_Name};${vLastName};${vEmail};${vPhone};${vPassword};${vNewsletter}
+Cas1;Doflamingo;Donkihoti;donkihotidoflamingo@onepiece.pi;02654879;A123456;Yes
+Cas2;Bbbbbb;Aaaaaaa;aaaaabbbbb@onepiece.pi;0331316567;I123456;No
+Cas3;Cccccc;Ddddddd;cccccddddd@onepiece.pi;0323454456;N897685;Yes
+Cas4;Eeeeee;Fffffff;fffffeeeee@onepiece.pi;0956545568;F3665565;No
+Cas5;Dwaterlo;Trafalgar;trafallgarlow@onepiece.pi;02236548;HobohobihobiNomi;Yes
+Cas6;Gggggg;Hhhhhhh;gggggghhhh@onepiece.pi;03265478;G345654656;No
+Cas7;Iiiiii;Jjjjjjj;iiiiiijjjj@onepiece.pi;03256545;I664544666;Yes
+Cas8;Edward;Newgit;edwardnewguit@onepiece.pi;032659865;Alalalalala;No
+Cas9;Bagi;Cloune;baghicloun@onepiece.pi;0378687865;Barabarabara;Yes
+Cas10;Mihik;Drakola;drakolamihok@onepiece.pi;08954554545;Mihimihiomhi;No
